@@ -1,5 +1,5 @@
 heroes = [
-    "",  # index 0 not used
+    "",  
     ["Layla", "Marksman"],
     ["Tigreal", "Tank"],
     ["Gusion", "Assassin"],
