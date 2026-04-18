@@ -7,11 +7,9 @@ heroes = [
     ["Chou", "Fighter"]
 ]
 
-# Player info
 ign = input("In-game name (IGN): ")
 rank = input("Current rank: ")
 
-# Display hero list
 print("\nHERO ROSTER")
 for i in range(1, 6):
     print(i, heroes[i][0], "-", heroes[i][1])
@@ -22,7 +20,7 @@ matches = []
 wins = 0
 losses = 0
 
-# 4 matches
+
 for i in range(4):
     print("MATCH", i + 1)
 
@@ -41,19 +39,19 @@ for i in range(4):
     assists = int(input("Assists: "))
     result = input("Result (W/L): ").upper()
 
-    # prevent division by zero
+    
     if deaths == 0:
         deaths = 1
 
     kda = (kills + assists) / deaths
 
-    # win/loss count
+    
     if result == "W":
         wins = wins + 1
     else:
         losses = losses + 1
 
-    # performance tag
+    
     if kda >= 5 and result == "W":
         tag = "DOMINATION!"
     elif kda >= 5 and result == "L":
@@ -66,13 +64,13 @@ for i in range(4):
     matches.append([hero, kda, result, tag])
     print("\n")
 
-# find best match
+
 best_index = 0
 for i in range(len(matches)):
     if matches[i][1] > matches[best_index][1]:
         best_index = i
 
-# win rate
+
 total_matches = len(matches)
 
 if total_matches == 0:
@@ -80,7 +78,7 @@ if total_matches == 0:
 else:
     win_rate = int((wins / total_matches) * 100)
 
-# OUTPUT
+
 print("\n==============================")
 print(ign, "-", rank)
 print("==============================")
